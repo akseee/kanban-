@@ -21,17 +21,12 @@
 ##### Пример данных
 
 ```
-interface Document {
-    id: string;
-    title: string;
-    status: "in-progress" | "under-review" | "completed";
-}
+  {
+    "id": 2,
+    "text": "Write a creative poem about the changing seasons and how they reflect emotions.",
+    "status": "pending"
+  }
 
-const initialDocuments: Document[] = [
-    { id: "1", title: "Документ 1", status: "in-progress" },
-    { id: "2", title: "Документ 2", status: "in-progress" },
-    { id: "3", title: "Документ 3", status: "under-review" },
-];
 ```
 
 #### Запуск
