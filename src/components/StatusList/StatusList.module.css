@@ -29,25 +29,25 @@
 }
 
 .progress .tasks li {
-  border-top-color: rgb(133, 133, 255);
+  border-top-color: var(--progress);
 }
 
 .done .tasks li {
-  border-top-color: rgb(133, 255, 133);
+  border-top-color: var(--done);
 }
 
 .pending .tasks li {
-  border-top-color: rgb(255, 133, 133);
+  border-top-color: var(--pending);
 }
 
 .done .add:hover {
-  border-color: rgb(133, 255, 133);
+  border-color: var(--done);
 }
 
 .pending .add:hover {
-  border-color: rgb(255, 133, 133);
+  border-color: var(--pending);
 }
 
 .progress .add:hover {
-  border-color: rgb(133, 133, 255);
+  border-color: var(--progress);
 }

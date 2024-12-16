@@ -11,6 +11,15 @@
   transition: all 0.3s ease-in-out;
 }
 
+.task:hover {
+  transform: scale(1.05);
+  cursor: grab;
+}
+
+.task:active {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
 .taskText {
   width: 100%;
   min-height: 75px;
@@ -33,18 +42,34 @@
 
 .button {
   padding: 0.5em 2em;
+  transition: 0.3s ease-in-out;
 }
 
-.buttonsContainer .button:hover {
+.save {
+  font-weight: 800;
+}
+
+.remove:hover {
   opacity: 1;
   color: red;
 }
 
-.task:hover {
-  transform: scale(1.05);
-  cursor: grab;
+.save:hover {
+  color: black;
 }
 
-.task:active {
-  background-color: rgba(128, 128, 128, 0.2);
+.edit:hover {
+  color: green;
+}
+
+.pending {
+  color: var(--pending);
+}
+
+.done {
+  color: var(--done);
+}
+
+.progress {
+  color: var(--progress);
 }

@@ -1,6 +1,10 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
+
+  --pending: rgb(255, 133, 133);
+  --done: rgb(133, 255, 133);
+  --progress: rgb(133, 133, 255);
 }
 
 *,

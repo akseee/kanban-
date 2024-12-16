@@ -38,7 +38,7 @@ export const StatusList: FC<StatusListProps> = ({ status, tasks }) => {
         >
           <ul className={clsx(styles.tasks, styles[status])}>
             {filteredTasks.map((task: TTask) => {
-              return <Task key={task.id} editing={false} task={task}></Task>
+              return <Task key={task.id} task={task}></Task>
             })}
           </ul>
         </SortableContext>

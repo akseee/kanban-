@@ -22,7 +22,7 @@ export const Board: FC<BoardProps> = ({ tasks }) => {
   const dispatch = useDispatch()
 
   const handleDragStart = (event: DragStartEvent) => {
-    console.log(event.active.data.current)
+    console.log(event.activatorEvent)
   }
 
   const handleDragEnd = (event: DragEndEvent) => {
