@@ -29,7 +29,7 @@ export const Task: FC<TaskUIProps> = ({ task }) => {
 
   return (
     <Draggable task={task} key={task.id} disabled={editing}>
-      <li className={styles.task}>
+      <li className={clsx(styles.task, editing && styles.editing)}>
         <textarea
           ref={textRef}
           onChange={handleTextChange}
