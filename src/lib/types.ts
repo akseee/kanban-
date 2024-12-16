@@ -1,10 +1,6 @@
-export enum Status {
-  DONE = "Done",
-  PROGRESS = "In-progress",
-  PENDING = "Pending",
-}
+export type TStatus = "done" | "progress" | "pending"
 
-export type TStatus = "Done" | "In-progress" | "Pending"
+export const statuses: TStatus[] = ["done", "progress", "pending"]
 
 export type TTask = {
   id: number

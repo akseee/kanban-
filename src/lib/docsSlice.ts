@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit"
 type TasksState = {
   tasks: TTask[]
 }
+
 const initialState: TasksState = {
   tasks: [],
 }
@@ -17,8 +18,6 @@ const docsSlice = createSlice({
       state.tasks = payload
     },
     addTask(state, { payload }) {
-      console.log("addTask")
-
       state.tasks.push({
         id: Date.now(),
         text: payload.text,
@@ -26,7 +25,6 @@ const docsSlice = createSlice({
       })
     },
     moveTask(state, { payload }) {
-      console.log("moveTask")
       const task = state.tasks.find((task) => task.id === payload.id)
       if (task) task.status = payload.status
     },

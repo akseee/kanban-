@@ -2,46 +2,46 @@
   {
     "id": 0,
     "text": "To do homework for the math course, specifically finishing the integration problems.",
-    "status": "In-progress"
+    "status": "progress"
   },
   {
     "id": 1,
     "text": "Complete the Elden Ring DLC and collect all the hidden items to achieve 100% completion.",
-    "status": "Done"
+    "status": "done"
   },
   {
     "id": 2,
     "text": "Write a creative poem about the changing seasons and how they reflect emotions.",
-    "status": "Pending"
+    "status": "pending"
   },
   {
     "id": 3,
     "text": "Plan and organize the weekend trip to the countryside, including packing and preparing meals.",
-    "status": "Pending"
+    "status": "pending"
   },
   {
     "id": 4,
     "text": "Read the final two chapters of the novel for the book club meeting next week.",
-    "status": "In-progress"
+    "status": "progress"
   },
   {
     "id": 5,
     "text": "Draft an email to the local community center regarding volunteering opportunities.",
-    "status": "Done"
+    "status": "done"
   },
   {
     "id": 6,
     "text": "Research and compile information for the upcoming history project on World War II.",
-    "status": "In-progress"
+    "status": "progress"
   },
   {
     "id": 7,
     "text": "Design and sketch ideas for the personal art project focusing on futuristic cityscapes.",
-    "status": "Pending"
+    "status": "pending"
   },
   {
     "id": 8,
     "text": "Review the JavaScript codebase for optimization and add unit tests for key modules.",
-    "status": "In-progress"
+    "status": "progress"
   }
 ]
