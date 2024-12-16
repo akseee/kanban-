@@ -1,0 +1,53 @@
+.statusContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: white;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add {
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+  padding: 0.3rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+.add:hover {
+  transform: scale(1.1);
+}
+
+.progress .tasks li {
+  border-top-color: rgb(133, 133, 255);
+}
+
+.done .tasks li {
+  border-top-color: rgb(133, 255, 133);
+}
+
+.pending .tasks li {
+  border-top-color: rgb(255, 133, 133);
+}
+
+.done .add:hover {
+  border-color: rgb(133, 255, 133);
+}
+
+.pending .add:hover {
+  border-color: rgb(255, 133, 133);
+}
+
+.progress .add:hover {
+  border-color: rgb(133, 133, 255);
+}

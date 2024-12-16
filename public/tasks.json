@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "text": "To do homework",
+    "status": "In-progress"
+  },
+  {
+    "id": 1,
+    "text": "Elden Ring",
+    "status": "Done"
+  },
+  {
+    "id": 2,
+    "text": "Write a poem",
+    "status": "Pending"
+  }
+]
