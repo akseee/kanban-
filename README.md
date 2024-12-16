@@ -52,6 +52,8 @@ npm run dev
 
 Открыть [http://localhost:3000](http://localhost:3000) в вашем браузере чтобы увидеть результат
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Улучшения / To-do
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Заменить окно добавления задачи
+- Добавить визуальное обозначение droppable зоны для лучшего понимания
+- Сделать колонки без скоролллов для
