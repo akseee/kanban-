@@ -24,6 +24,10 @@ const docsSlice = createSlice({
         status: payload.status,
       })
     },
+    editTask(state, { payload }) {
+      const task = state.tasks.find((task) => task.id === payload.id)
+      if (task) task.text = payload.text
+    },
     moveTask(state, { payload }) {
       const task = state.tasks.find((task) => task.id === payload.id)
       if (task) task.status = payload.status
@@ -31,5 +35,5 @@ const docsSlice = createSlice({
   },
 })
 
-export const { loadTasks, addTask, moveTask } = docsSlice.actions
+export const { loadTasks, addTask, moveTask, editTask } = docsSlice.actions
 export default docsSlice.reducer

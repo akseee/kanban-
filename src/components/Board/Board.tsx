@@ -1,12 +1,7 @@
 "use client"
 
 import { statuses, TTask } from "@/lib/types"
-import {
-  closestCenter,
-  DndContext,
-  DragEndEvent,
-  DragStartEvent,
-} from "@dnd-kit/core"
+import { closestCenter, DndContext, DragEndEvent } from "@dnd-kit/core"
 import { StatusList } from "../StatusList/StatusList"
 
 import styles from "./Board.module.css"
@@ -21,8 +16,8 @@ type BoardProps = {
 export const Board: FC<BoardProps> = ({ tasks }) => {
   const dispatch = useDispatch()
 
-  const handleDragStart = (event: DragStartEvent) => {
-    console.log(event.activatorEvent)
+  const handleDragStart = (/* event: DragStartEvent */) => {
+    // console.log(event.activatorEvent)
   }
 
   const handleDragEnd = (event: DragEndEvent) => {

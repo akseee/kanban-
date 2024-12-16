@@ -4,6 +4,8 @@ import styles from "./Task.module.css"
 import { FC, ReactNode, useRef, useState } from "react"
 import { useDraggable } from "@dnd-kit/core"
 import { TTask } from "@/lib/types"
+import { useDispatch } from "@/lib/store"
+import { editTask } from "@/lib/docsSlice"
 
 type TaskUIProps = {
   task: TTask
@@ -14,6 +16,8 @@ export const Task: FC<TaskUIProps> = ({ task }) => {
   const [text, setText] = useState(task.text)
   const textRef = useRef<HTMLTextAreaElement>(null)
 
+  const dispatch = useDispatch()
+
   const handleEditClick = () => {
     setEditing(true)
     textRef.current?.focus()
@@ -21,6 +25,7 @@ export const Task: FC<TaskUIProps> = ({ task }) => {
 
   const handleSaveClick = () => {
     setEditing(false)
+    dispatch(editTask({ id: task.id, text }))
   }
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -43,6 +48,7 @@ export const Task: FC<TaskUIProps> = ({ task }) => {
         <div className={styles.buttonsContainer}>
           {!editing && (
             <button
+              type="button"
               onClick={handleEditClick}
               className={clsx(styles.edit, styles.button)}
             >
@@ -51,6 +57,7 @@ export const Task: FC<TaskUIProps> = ({ task }) => {
           )}
           {editing && (
             <button
+              type="button"
               onClick={handleSaveClick}
               className={clsx(styles[task.status], styles.save, styles.button)}
             >
@@ -58,6 +65,7 @@ export const Task: FC<TaskUIProps> = ({ task }) => {
             </button>
           )}
           <button
+            type="button"
             onClick={() => console.log("remove")}
             className={clsx(styles.remove, styles.button)}
           >
