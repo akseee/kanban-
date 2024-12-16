@@ -23,17 +23,25 @@ const docsSlice = createSlice({
         text: payload.text,
         status: payload.status,
       })
+      console.log("added")
     },
     editTask(state, { payload }) {
       const task = state.tasks.find((task) => task.id === payload.id)
       if (task) task.text = payload.text
+      console.log("edited")
     },
     moveTask(state, { payload }) {
       const task = state.tasks.find((task) => task.id === payload.id)
       if (task) task.status = payload.status
+      console.log("moved")
+    },
+    removeTask(state, { payload }) {
+      state.tasks = state.tasks.filter((task) => task.id !== payload.id)
+      console.log("removed")
     },
   },
 })
 
-export const { loadTasks, addTask, moveTask, editTask } = docsSlice.actions
+export const { loadTasks, addTask, moveTask, editTask, removeTask } =
+  docsSlice.actions
 export default docsSlice.reducer

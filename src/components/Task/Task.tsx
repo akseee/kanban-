@@ -4,8 +4,8 @@ import styles from "./Task.module.css"
 import { FC, ReactNode, useRef, useState } from "react"
 import { useDraggable } from "@dnd-kit/core"
 import { TTask } from "@/lib/types"
-import { useDispatch } from "@/lib/store"
-import { editTask } from "@/lib/docsSlice"
+import { useDispatch, useSelector } from "@/lib/store"
+import { editTask, removeTask } from "@/lib/docsSlice"
 
 type TaskUIProps = {
   task: TTask
@@ -30,6 +30,10 @@ export const Task: FC<TaskUIProps> = ({ task }) => {
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value)
+  }
+
+  const handleRemove = () => {
+    dispatch(removeTask({ id: task.id }))
   }
 
   return (
@@ -66,7 +70,7 @@ export const Task: FC<TaskUIProps> = ({ task }) => {
           )}
           <button
             type="button"
-            onClick={() => console.log("remove")}
+            onClick={handleRemove}
             className={clsx(styles.remove, styles.button)}
           >
             remove
