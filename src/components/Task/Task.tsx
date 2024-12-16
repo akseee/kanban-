@@ -6,7 +6,6 @@ import { FC } from "react"
 
 type TaskUIProps = {
   editing: boolean
-
   text: string
 }
 

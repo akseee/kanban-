@@ -10,5 +10,4 @@ export type TTask = {
   id: number
   status: TStatus
   text: string
-  // date: Date
 }

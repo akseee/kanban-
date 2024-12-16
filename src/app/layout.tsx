@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
-import StoreProvider from "./StoreProvider"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,17 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <StoreProvider
-          tasks={[
-            {
-              id: 0,
-              status: "Pending",
-              text: "To do homework",
-            },
-          ]}
-        >
-          {children}
-        </StoreProvider>
+        {children}
       </body>
     </html>
   )

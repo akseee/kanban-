@@ -1,18 +1,37 @@
+import { TTask } from "./types"
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialState = {
-  docs: [],
+type TasksState = {
+  tasks: TTask[]
+}
+const initialState: TasksState = {
+  tasks: [],
 }
 
 const docsSlice = createSlice({
-  name: "docs",
+  name: "tasks",
   initialState,
   reducers: {
-    initializeDocs(state, { payload }) {
-      state.docs = payload
+    loadTasks(state, { payload }) {
+      console.log("loaded in redux")
+      state.tasks = payload
+    },
+    addTask(state, { payload }) {
+      console.log("addTask")
+
+      state.tasks.push({
+        id: Date.now(),
+        text: payload.text,
+        status: payload.status,
+      })
+    },
+    moveTask(state, { payload }) {
+      console.log("moveTask")
+      const task = state.tasks.find((task) => task.id === payload.id)
+      if (task) task.status = payload.status
     },
   },
 })
 
-export const { initializeDocs } = docsSlice.actions
+export const { loadTasks, addTask, moveTask } = docsSlice.actions
 export default docsSlice.reducer

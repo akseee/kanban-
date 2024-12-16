@@ -13,6 +13,7 @@
 
 .taskText {
   width: 100%;
+  min-height: 75px;
   border: none;
   padding: 0;
   box-shadow: none;
@@ -40,7 +41,7 @@
 }
 
 .task:hover {
-  transform: scale(0.95);
+  transform: scale(1.05);
   cursor: grab;
 }
 
