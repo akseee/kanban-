@@ -6,22 +6,23 @@ import { FC, ReactNode } from "react"
 import { TStatus, TTask } from "@/lib/types"
 import { Task } from "../Task/Task"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
-import { useDispatch } from "@/lib/store"
+import { useDispatch, useSelector } from "@/lib/store"
 import { addTask } from "@/lib/docsSlice"
 import { useDroppable } from "@dnd-kit/core"
 
 type StatusListProps = {
   status: TStatus
-  tasks: TTask[]
 }
 
-export const StatusList: FC<StatusListProps> = ({ status, tasks }) => {
-  const filteredTasks = tasks.filter((item: TTask) => item.status === status)
+export const StatusList: FC<StatusListProps> = ({ status }) => {
   const dispatch = useDispatch()
-
+  const selector = useSelector((state) => state.tasks)
+  const filteredTasks = selector.filter((item: TTask) => item.status === status)
   const handleAdd = () => {
     const text = prompt("Временное решение для задачи")
-    if (text) dispatch(addTask({ text, status }))
+    if (text) {
+      dispatch(addTask({ text, status, id: new Date().getTime() }))
+    }
   }
 
   return (

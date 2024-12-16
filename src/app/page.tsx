@@ -24,7 +24,7 @@ export default async function Home() {
           <h1>Simple Kanban</h1>
         </header>
         <main className={styles.main}>
-          <Board tasks={tasks}></Board>
+          <Board></Board>
         </main>
       </div>
     </StoreProvider>

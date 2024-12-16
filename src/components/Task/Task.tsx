@@ -4,7 +4,7 @@ import styles from "./Task.module.css"
 import { FC, ReactNode, useRef, useState } from "react"
 import { useDraggable } from "@dnd-kit/core"
 import { TTask } from "@/lib/types"
-import { useDispatch, useSelector } from "@/lib/store"
+import { useDispatch } from "@/lib/store"
 import { editTask, removeTask } from "@/lib/docsSlice"
 
 type TaskUIProps = {

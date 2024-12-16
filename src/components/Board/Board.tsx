@@ -1,23 +1,23 @@
 "use client"
 
-import { statuses, TTask } from "@/lib/types"
-import { closestCenter, DndContext, DragEndEvent } from "@dnd-kit/core"
+import { statuses } from "@/lib/types"
+import {
+  closestCenter,
+  DndContext,
+  DragEndEvent,
+  DragStartEvent,
+} from "@dnd-kit/core"
 import { StatusList } from "../StatusList/StatusList"
 
 import styles from "./Board.module.css"
-import { FC } from "react"
 import { useDispatch } from "@/lib/store"
 import { moveTask } from "@/lib/docsSlice"
 
-type BoardProps = {
-  tasks: TTask[]
-}
-
-export const Board: FC<BoardProps> = ({ tasks }) => {
+export const Board = () => {
   const dispatch = useDispatch()
 
-  const handleDragStart = (/* event: DragStartEvent */) => {
-    // console.log(event.activatorEvent)
+  const handleDragStart = (event: DragStartEvent) => {
+    console.log(event.activatorEvent)
   }
 
   const handleDragEnd = (event: DragEndEvent) => {
@@ -36,7 +36,7 @@ export const Board: FC<BoardProps> = ({ tasks }) => {
       >
         <ul className={styles.list}>
           {statuses.map((status) => (
-            <StatusList status={status} tasks={tasks} key={status} />
+            <StatusList status={status} key={status} />
           ))}
         </ul>
       </DndContext>

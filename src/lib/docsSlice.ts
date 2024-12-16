@@ -19,25 +19,21 @@ const docsSlice = createSlice({
     },
     addTask(state, { payload }) {
       state.tasks.push({
-        id: Date.now(),
+        id: payload.id,
         text: payload.text,
         status: payload.status,
       })
-      console.log("added")
     },
     editTask(state, { payload }) {
       const task = state.tasks.find((task) => task.id === payload.id)
       if (task) task.text = payload.text
-      console.log("edited")
     },
     moveTask(state, { payload }) {
       const task = state.tasks.find((task) => task.id === payload.id)
       if (task) task.status = payload.status
-      console.log("moved")
     },
     removeTask(state, { payload }) {
       state.tasks = state.tasks.filter((task) => task.id !== payload.id)
-      console.log("removed")
     },
   },
 })
