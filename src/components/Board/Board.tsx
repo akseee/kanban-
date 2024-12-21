@@ -25,6 +25,7 @@ export const Board = () => {
   return (
     <div className={styles.board}>
       <DndContext
+        id={'1409'}
         collisionDetection={closestCenter}
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
