@@ -5,6 +5,7 @@ import { closestCenter, DndContext, DragEndEvent } from "@dnd-kit/core"
 import { StatusList } from "../StatusList/StatusList"
 
 import styles from "./Board.module.css"
+
 import { useDispatch } from "@/lib/store"
 import { moveTask } from "@/lib/docsSlice"
 
@@ -25,7 +26,7 @@ export const Board = () => {
   return (
     <div className={styles.board}>
       <DndContext
-        id={'1409'}
+        id={'cc35cad1-5801-41da-a8ee-ecd1eac973a1'}
         collisionDetection={closestCenter}
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}

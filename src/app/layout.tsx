@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kanban Board",
   description: "Created by @akseee",
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
